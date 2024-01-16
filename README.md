@@ -1,61 +1,50 @@
-# Currency Converter
+# Currency Converter 💱
 
-This Python script allows you to convert an amount from one currency to another using exchange rates. The script includes a `convert_currency` function that takes the amount, source currency code, and target currency code as input parameters and returns the converted amount.
+This Python script is a simple yet efficient currency converter that allows you to convert an amount from one currency to another using exchange rates. It includes interactive prompts and uses emojis to enhance the user experience.
 
-## Usage
+## How to Use 🚀
 
-To use the currency converter, run the script and follow the prompts to enter the amount, source currency code, and target currency code.
+1. Run the script by executing the following command in your terminal or command prompt:
 
-```bash
-python currency_converter.py
-```
+    ```bash
+    python currency_converter.py
+    ```
 
-## Function: `convert_currency`
+2. Enter the required information as prompted:
 
-```python
-def convert_currency(amount, source_currency, target_currency):
-    """
-    Convert an amount from the source currency to the target currency.
+    - Enter the amount to convert.
+    - Enter the source currency code.
+    - Enter the target currency code.
 
-    Parameters:
-    - amount (float): The amount to convert.
-    - source_currency (str): The source currency code.
-    - target_currency (str): The target currency code.
+3. The script will then display the converted amount along with the source and target currency codes.
 
-    Returns:
-    - str: A formatted string representing the converted amount.
-    """
-    # Exchange rates as of a specific date
-    currency_rates = {"USD": 1.00, "INR": 83.22, "EUR": 0.92, "JPY": 147, "GBP": 0.79, "AUD": 1.5}
+## Functionality 🛠️
 
-    # Check if source currency is valid
-    if source_currency not in currency_rates:
-        return f"Invalid source currency code: {source_currency}. Please use valid currency codes."
+The script comprises two main functions:
 
-    # Check if target currency is valid
-    if target_currency not in currency_rates:
-        return f"Invalid target currency code: {target_currency}. Please use valid currency codes."
+### `convert_currency(amount, source_currency, target_currency, rates)`
 
-    # Calculate the converted amount
-    converted_amount = amount * (currency_rates[target_currency] / currency_rates[source_currency])
-    rounded_amount = round(converted_amount, 2)
+This function takes in the amount to be converted, the source and target currency codes, and a dictionary of exchange rates. It then calculates and returns the converted amount, rounded to two decimal places.
 
-    # Format the result string
-    result = "{:.2f} {} = {:.2f} {}".format(amount, source_currency, rounded_amount, target_currency)
-    return result
-```
+### `get_user_input()`
 
-## Running the Script
+This function prompts the user to input the amount, source currency code, and target currency code. It handles exceptions to ensure that the input is valid (numeric amount).
 
-To run the script, execute the `main` function. The script will prompt you to enter the amount, source currency code, and target currency code.
+## Example 📝
 
 ```python
-if __name__ == "__main__":
-    main()
+# Exchange rates as of a specific date
+currency_rates = {"USD": 1.00, "INR": 83.22, "EUR": 0.92, "JPY": 147, "GBP": 0.79, "AUD": 1.5}
+
+try:
+    amount, source_currency, target_currency = get_user_input()
+
+    # Call the conversion function and print the result
+    result = convert_currency(amount, source_currency, target_currency, currency_rates)
+    print(result)
+
+except ValueError as e:
+    print(f"⚠️ Error: {str(e)}")
 ```
 
-## Note
-
-- The exchange rates used in the script are as of a specific date and may not reflect the current rates.
-- Ensure that you enter valid currency codes when prompted.
-- If an invalid input is provided, the script will display an appropriate error message.
+In this example, the script prompts the user for input, validates the input, performs the currency conversion, and prints the result. If there are any errors (e.g., invalid input or currency codes), it catches the `ValueError` and prints an error message with an attention-grabbing emoji. Happy currency converting! 💸✨
