@@ -1,50 +1,87 @@
-# Currency Converter 💱
+# **💱** Currency Converter
 
-This Python script is a simple yet efficient currency converter that allows you to convert an amount from one currency to another using exchange rates. It includes interactive prompts and uses emojis to enhance the user experience.
+This Python script builds upon the existing simple graphical user interface (GUI) for converting between different currencies, adding new features and enhancing user experience.
 
-## How to Use 🚀
+## 📦 Dependencies
 
-1. Run the script by executing the following command in your terminal or command prompt:
+This project relies on the following libraries:
 
+- `**Tkinter**`: `Tkinter` is Python's de-facto standard GUI (Graphical User Interface) package. It provides a fast and easy way to create GUI applications.
+- `**Requests**`: `Requests` is an elegant and simple HTTP library for Python, allowing for easy communication with web servers.
+
+## 🚀 Installation
+
+To get started with the Currency Converter application, follow these steps:
+
+1. **Clone the Repository**: Clone the repository to your local machine using Git by running the following command:
+    
+    ```bash
+    git clone <https://github.com/Celestial-0/Currency-Converter.git>
+    ```
+    
+2. **Navigate to the Directory**: Change your current directory to the cloned repository:
+    
+    ```bash
+    cd Currency-Converter
+    ```
+    
+3. **Install Dependencies**:  Make sure you have Python installed on your system. Then, install the required **`requests`** library using pip:
+    
+    ```bash
+    pip install requests
+    ```
+    
+
+## 🖥️ Usage
+
+After installing the dependencies, you can run the Currency Converter application:
+
+1. **Run the Application**: Execute the [currency_converter.py]() file:
+    
     ```bash
     python currency_converter.py
     ```
+    
+2. **Conversion Process**: Once the application is running, enter the amount, select the source and target currencies from the dropdown menus, and click the "Convert" button to view the conversion result.
+3. **Internet Connection**: Ensure you have an active internet connection as the application fetches the latest exchange rates from an API.
 
-2. Enter the required information as prompted:
+By following these steps, you can easily install and use the Currency Converter application on your local machine.
 
-    - Enter the amount to convert.
-    - Enter the source currency code.
-    - Enter the target currency code.
+## 📝 Description
 
-3. The script will then display the converted amount along with the source and target currency codes.
+The script now creates an enhanced GUI where users can not only convert currencies but also view historical exchange rate trends. The currency codes available remain 'AUD', 'EUR', 'GBP', 'INR', 'JPY', and 'USD'.
 
-## Functionality 🛠️
+We've added a "Show History" button that fetches historical exchange rates of the past 30 days from the `exchangerate-api` and displays a line graph using matplotlib.
 
-The script comprises two main functions:
+The input validation has also been improved. Now, if the input fields are not properly filled, a user-friendly pop-up message will appear to guide the user.
 
-### `convert_currency(amount, source_currency, target_currency, rates)`
+## 🛠️ Functionality
 
-This function takes in the amount to be converted, the source and target currency codes, and a dictionary of exchange rates. It then calculates and returns the converted amount, rounded to two decimal places.
+- `__init__(self, master)`: This function initializes a new instance of the `Converter` class. It sets the window title, initializes exchange rates data, creates input fields, configures column resizing, and creates a convert button.
+- `create_inputs(self)`: This function creates input fields for the amount and source/target currencies. It also sets the available currency options.
+- `config_column_resize(self)`: This function configures column resizing to make input fields equally expandable.
+- `create_button(self)`: This function creates a convert button, which triggers the `convert` function when clicked.
+- `convert(self)`: This function handles the conversion process. It first validates the inputs. If the inputs are valid, it fetches the current exchange rates from `exchangerate-api`, performs the conversion, and displays the result in a pop-up message box.
+- `main()`: This is the main function that creates a new instance of the Tkinter window and starts the application. It sets the available currency codes and starts the main event loop.
 
-### `get_user_input()`
+## 📝 Example
 
-This function prompts the user to input the amount, source currency code, and target currency code. It handles exceptions to ensure that the input is valid (numeric amount).
+<p align="center">
+  <img src="https://github.com/Celestial-0/Currency-Converter/raw/main/asset/1.png" alt="Example1"> <img src="https://github.com/Celestial-0/Currency-Converter/raw/main/asset/2.png" alt="Example2">
+    
+  <img src="https://github.com/Celestial-0/Currency-Converter/raw/main/asset/3.png" alt="Example3">
+</p>
 
-## Example 📝
 
-```python
-# Exchange rates as of a specific date
-currency_rates = {"USD": 1.00, "INR": 83.22, "EUR": 0.92, "JPY": 147, "GBP": 0.79, "AUD": 1.5}
+## **🤝 Contributing**
 
-try:
-    amount, source_currency, target_currency = get_user_input()
+We welcome your contributions! Feel free to fork this repository and submit pull requests to make  Currency Converter even better.
 
-    # Call the conversion function and print the result
-    result = convert_currency(amount, source_currency, target_currency, currency_rates)
-    print(result)
+## **🌟 Additional Features to Explore**
 
-except ValueError as e:
-    print(f"⚠️ Error: {str(e)}")
-```
-
-In this example, the script prompts the user for input, validates the input, performs the currency conversion, and prints the result. If there are any errors (e.g., invalid input or currency codes), it catches the `ValueError` and prints an error message with an attention-grabbing emoji. Happy currency converting! 💸✨
+- Customizable Themes 🎨
+- Offline Mode 📴
+- Currency Symbols 💱
+- Historical Exchange Rates 📈
+- Multi-Language Support 🌐
+- Enhanced Error Handling ⚠️
