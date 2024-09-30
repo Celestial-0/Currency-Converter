@@ -96,11 +96,11 @@ The currency data is fetched from the [Fawaz Ahmed Currency API](https://github.
 
 ### Light Mode
 
-[](./src/assets/light_mode.png)
+[](https://github.com/Celestial-0/Currency-Converter/blob/main/React/src/assets/light_mode.png)
 
 ### Dark Mode
 
-[](./src/assets/dark_mode.png)
+[](https://github.com/Celestial-0/Currency-Converter/blob/main/React/src/assets/dark_mode.png)
 
 ## 📜 License
 

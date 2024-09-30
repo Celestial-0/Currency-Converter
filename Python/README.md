@@ -67,9 +67,9 @@ The input validation has also been improved. Now, if the input fields are not pr
 ## 📝 Example
 
 <p align="center">
-  <img src="https://github.com/Celestial-0/Currency-Converter/raw/main/asset/1.png" alt="Example1"> <img src="https://github.com/Celestial-0/Currency-Converter/raw/main/asset/2.png" alt="Example2">
+  <img src="https://github.com/Celestial-0/Currency-Converter/blob/main/Python/asset/1.png" alt="Example1"> <img src="https://github.com/Celestial-0/Currency-Converter/blob/main/Python/asset/3.png" alt="Example2">
     
-  <img src="https://github.com/Celestial-0/Currency-Converter/raw/main/asset/3.png" alt="Example3">
+  <img src="https://github.com/Celestial-0/Currency-Converter/blob/main/Python/asset/3.png" alt="Example3">
 </p>
 
 
